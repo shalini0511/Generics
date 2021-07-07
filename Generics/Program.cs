@@ -8,42 +8,44 @@ namespace Generics
 {
     class Program
     {
-        public static void ToPrint(int[] inputArray)
+        public static void ToPrint<T>(T[] inputArray)
         {
-            foreach(int element in inputArray)
+            foreach (var element in inputArray)
             {
-                Console.WriteLine(element);
+                Console.Write(element);
             }
-            Console.WriteLine("-----------------------------");
+            Console.WriteLine("\n-----------------------------");
 
         }
-        public static void ToPrint(double[] inputArray)
+        public static void ToDisplay<T>(T[] inputArray)
         {
-            foreach(double element in inputArray)
+            foreach (var element in inputArray)
             {
-                Console.WriteLine(element);
+                Console.Write(element);
 
             }
-            Console.WriteLine("-------------------------------");
+            Console.WriteLine("\n-------------------------------");
         }
-        public static void ToPrint(char[] inputArray)
+        public static void ToExecute<T>(T[] inputArray)
         {
-            foreach(char element in inputArray)
+            foreach (var element in inputArray)
             {
-                Console.WriteLine(element);
+                Console.Write(element);
             }
-            Console.WriteLine("---------------------------------");
- 
+            Console.WriteLine("\n---------------------------------");
+
         }
         static void Main(string[] args)
         {
             int[] intArray = { 1, 2, 3, 4, 5, 6 };
-            double[] doubleArray = { 1.11,2.34,54.6,42.3,64.8 };
+            double[] doubleArray = { 1.11, 2.34, 54.6, 42.3, 64.8 };
             char[] charArray = { 'a', 'b', 'c', 'd', 'e' };
-            Program.ToPrint(intArray);
-            Program.ToPrint(doubleArray);
-            Program.ToPrint(charArray);
+            Program.ToPrint<int>(intArray);
+            Program.ToDisplay<double>(doubleArray);
+            Program.ToExecute<char>(charArray);
 
         }
+
+
     }
 }
